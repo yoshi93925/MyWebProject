@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+         version="6.1">
+
+    <display-name>project</display-name>
+
+    <!-- DefaultServlet mapping for static resources -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/css/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filters -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminAuthFilter</filter-name>
+        <filter-class>filter.AdminAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminAuthFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Servlets -->
+    <servlet>
+        <servlet-name>TopServlet</servlet-name>
+        <servlet-class>servlet.TopServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TopServlet</servlet-name>
+        <url-pattern>/top</url-pattern>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderItemsServlet</servlet-name>
+        <servlet-class>servlet.OrderItemsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderItemsServlet</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderAddressServlet</servlet-name>
+        <servlet-class>servlet.OrderAddressServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderAddressServlet</servlet-name>
+        <url-pattern>/order/address</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderConfirmServlet</servlet-name>
+        <servlet-class>servlet.OrderConfirmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderConfirmServlet</servlet-name>
+        <url-pattern>/order/confirm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderCompleteServlet</servlet-name>
+        <servlet-class>servlet.OrderCompleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderCompleteServlet</servlet-name>
+        <url-pattern>/order/complete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderStatusServlet</servlet-name>
+        <servlet-class>servlet.OrderStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderStatusServlet</servlet-name>
+        <url-pattern>/order/status</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderCancelServlet</servlet-name>
+        <servlet-class>servlet.OrderCancelServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderCancelServlet</servlet-name>
+        <url-pattern>/order/cancel</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VolunteerListServlet</servlet-name>
+        <servlet-class>servlet.VolunteerListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VolunteerListServlet</servlet-name>
+        <url-pattern>/volunteer/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VolunteerDetailServlet</servlet-name>
+        <servlet-class>servlet.VolunteerDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VolunteerDetailServlet</servlet-name>
+        <url-pattern>/volunteer/detail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VolunteerStatusServlet</servlet-name>
+        <servlet-class>servlet.VolunteerStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VolunteerStatusServlet</servlet-name>
+        <url-pattern>/volunteer/status</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>servlet.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>servlet.AdminLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/admin/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminMenuServlet</servlet-name>
+        <servlet-class>servlet.AdminMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMenuServlet</servlet-name>
+        <url-pattern>/admin/menu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminItemListServlet</servlet-name>
+        <servlet-class>servlet.AdminItemListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminItemListServlet</servlet-name>
+        <url-pattern>/admin/items</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminItemAddServlet</servlet-name>
+        <servlet-class>servlet.AdminItemAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminItemAddServlet</servlet-name>
+        <url-pattern>/admin/item/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminItemEditServlet</servlet-name>
+        <servlet-class>servlet.AdminItemEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminItemEditServlet</servlet-name>
+        <url-pattern>/admin/item/edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminItemStockServlet</servlet-name>
+        <servlet-class>servlet.AdminItemStockServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminItemStockServlet</servlet-name>
+        <url-pattern>/admin/item/stock</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminItemDeleteServlet</servlet-name>
+        <servlet-class>servlet.AdminItemDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminItemDeleteServlet</servlet-name>
+        <url-pattern>/admin/item/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminOrderListServlet</servlet-name>
+        <servlet-class>servlet.AdminOrderListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminOrderListServlet</servlet-name>
+        <url-pattern>/admin/orders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminOrderDetailServlet</servlet-name>
+        <servlet-class>servlet.AdminOrderDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminOrderDetailServlet</servlet-name>
+        <url-pattern>/admin/order/detail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminOrderDeleteServlet</servlet-name>
+        <servlet-class>servlet.AdminOrderDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminOrderDeleteServlet</servlet-name>
+        <url-pattern>/admin/order/delete</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
