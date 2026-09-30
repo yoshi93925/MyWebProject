@@ -1,3 +1,4 @@
+<a id="top"></a>
 # アプリケーション「ラストワンマイル」（避難所 物資お届けSOS）
 
 [![Java](https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
@@ -5,7 +6,6 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Eclipse](https://img.shields.io/badge/Eclipse-IDE-2C2255?style=for-the-badge&logo=eclipse-ide&logoColor=white)](https://www.eclipse.org/)
 [![A5:SQL Mk-2](https://img.shields.io/badge/DB_Tool-A5:SQL_Mk--2-2D5986?style=for-the-badge)](https://a5m2.mmatsubara.com/)
-[![Antigravity](https://img.shields.io/badge/Dev_Tool-Antigravity-4285F4?style=for-the-badge)](https://antigravity.google/)
 
 災害発生時における避難所からの物資要請と、ボランティアによる配送支援、管理者による物資在庫・配送状況の一元管理を支援するWebアプリケーションです。  
 非常時でも迷わず直感的に要請・受付・配送ステータス管理ができるUIと、堅牢なデータ整合性・CSRF対策などのセキュリティを意識して開発しました。
@@ -31,7 +31,8 @@
 
 ---
 
-## <a id="section-images"></a>💻 画面イメージ
+<a id="section-images"></a>
+## 💻 画面イメージ
 
 *(※ 掲載画像はシステム画面の一部抜粋です)*
 
@@ -42,7 +43,8 @@
 
 ---
 
-## <a id="section-features"></a>✨ 主な機能
+<a id="section-features"></a>
+## ✨ 主な機能
 
 ### 📦 避難所・被災者向け（物資要請）機能
 * **支援物資の一覧・在庫確認**:
@@ -75,7 +77,8 @@
 
 ---
 
-## <a id="section-tech"></a>🧰 使用技術・開発環境
+<a id="section-tech"></a>
+## 🧰 使用技術・開発環境
 
 | カテゴリ | 技術スタック / バージョン |
 | :--- | :--- |
@@ -93,15 +96,16 @@
 
 ---
 
-## <a id="section-architecture"></a>📐 システム構成
+<a id="section-architecture"></a>
+## 📐 システム構成
 
 ```mermaid
 graph TD
-    User([避難所 / ボランティア / 管理者]) -->|HTTP Request| Tomcat["Web Container (Apache Tomcat 11 / Java 25)"]
+    User(["避難所 / ボランティア / 管理者"]) -->|"HTTP Request"| Tomcat["Web Container (Apache Tomcat 11 / Java 25)"]
     
-    subgraph Web Application Architecture
-        EncodingFilter["EncodingFilter (全URLの文字コード統一)"]
-        AdminAuthFilter["AdminAuthFilter (/admin_* の認証チェック)"]
+    subgraph Architecture ["Web Application Architecture"]
+        EncodingFilter["EncodingFilter<br>(全URL文字コード統一)"]
+        AdminAuthFilter["AdminAuthFilter<br>(/admin_* 認証チェック)"]
         Tomcat --> EncodingFilter
         EncodingFilter --> AdminAuthFilter
         AdminAuthFilter --> Servlet["Servlet (Controller)"]
@@ -111,12 +115,13 @@ graph TD
         Servlet --> JSP["JSP (View)"]
     end
     
-    DAO -->|JDBC Driver (PostgreSQL 42.7.x)| DB[("PostgreSQL 16")]
+    DAO -->|"JDBC Driver"| DB[("PostgreSQL 16")]
 ```
 
 ---
 
-## <a id="section-flow"></a>📖 画面フロー・URLマッピング
+<a id="section-flow"></a>
+## 📖 画面フロー・URLマッピング
 
 ```text
 【避難所・一般フロー】
@@ -150,7 +155,8 @@ graph TD
 
 ---
 
-## <a id="section-setup"></a>🛠️ ローカル環境での実行・セットアップ手順
+<a id="section-setup"></a>
+## 🛠️ ローカル環境での実行・セットアップ手順
 
 ### 1. 前提条件
 * **Java**: JDK 25
@@ -183,7 +189,8 @@ db.driver=org.postgresql.Driver
 
 ---
 
-## <a id="section-efforts"></a>💡 工夫した点
+<a id="section-efforts"></a>
+## 💡 工夫した点
 
 ### 1. 災害現場を想定した直感的な導線設計
 * 非常時の混乱した現場でも操作に迷わないよう、物資の選択から要請完了までのステップ（一覧 -> カート -> 住所入力 -> 確認 -> 完了）を最短の手順で完結できる画面フローに設計しました。
@@ -199,7 +206,8 @@ db.driver=org.postgresql.Driver
 
 ---
 
-## <a id="section-lessons"></a>🧗 苦労した点・得られた教訓
+<a id="section-lessons"></a>
+## 🧗 苦労した点・得られた教訓
 
 ### 1. 複数テーブルに跨るトランザクションとエラーハンドリング
 注文登録と在庫数の連動処理において、途中で在庫不足や例外が発生した際のロールバック設計に注力しました。コネクションの適切なオープン/クローズ、自動コミットの無効化（`setAutoCommit(false)`）、例外発生時のロールバック処理を共通化することで、安定したデータ永続化の設計手法を身につけました。
