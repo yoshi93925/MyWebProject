@@ -123,7 +123,7 @@ graph TD
     end
 
     EC2 --> EncodingFilter
-    DAO -->|"JDBC"| DB[("PostgreSQL 16")]
+    DAO -->|"JDBC"| DB[("PostgreSQL 18.1")]
 ```
 
 ---
@@ -155,7 +155,7 @@ AWS上にデプロイしており、実際に動作をご確認いただけま�
 ### 1. 前提条件
 * **Java**: JDK 25
 * **Webコンテナ**: Apache Tomcat 11
-* **データベース**: PostgreSQL 16
+* **データベース**: PostgreSQL 18.1
 * **開発環境**: Eclipse (Eclipse IDE for Enterprise Java and Web Developers)
 
 ### 2. データベースの構築
