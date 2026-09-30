@@ -90,7 +90,7 @@
 | **Webコンテナ / APサーバ** | Apache Tomcat 11 (Jakarta EE 10 / Servlet 6.1 / JSP 4.0) |
 | **インフラ / ホスティング** | AWS (EC2) |
 | **バックエンドアーキテクチャ** | MVCモデル (Java Servlet, JSP, JSTL 3.0, DAO, Model/Bean) |
-| **データベース** | PostgreSQL 18.1（テーブル生成用 DDL.sql を同梱）
+| **データベース** | PostgreSQL 18.1（テーブル生成用 [DDL.sql](DDL.sql) を同梱） |
 | **フロントエンド** | HTML5, CSS3, JavaScript |
 | **セキュリティ・共通処理** | CSRFトークン認証、管理者認証フィルタ（`AdminAuthFilter`）、文字エンコーディングフィルタ（`EncodingFilter`） |
 | **統合開発環境 (IDE)** | Eclipse (Eclipse IDE for Enterprise Java and Web Developers) |
