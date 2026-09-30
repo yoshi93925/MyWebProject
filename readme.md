@@ -90,7 +90,7 @@
 | **Webコンテナ / APサーバ** | Apache Tomcat 11 (Jakarta EE 10 / Servlet 6.1 / JSP 4.0) |
 | **インフラ / ホスティング** | AWS (EC2) |
 | **バックエンドアーキテクチャ** | MVCモデル (Java Servlet, JSP, JSTL 3.0, DAO, Model/Bean) |
-| **データベース** | PostgreSQL 16 (JDBC接続) |
+| **データベース** | PostgreSQL 18.1（テーブル生成用 DDL.sql を同梱）
 | **フロントエンド** | HTML5, CSS3, JavaScript |
 | **セキュリティ・共通処理** | CSRFトークン認証、管理者認証フィルタ（`AdminAuthFilter`）、文字エンコーディングフィルタ（`EncodingFilter`） |
 | **統合開発環境 (IDE)** | Eclipse (Eclipse IDE for Enterprise Java and Web Developers) |
@@ -125,6 +125,27 @@ graph TD
     EC2 --> EncodingFilter
     DAO -->|"JDBC"| DB[("PostgreSQL 16")]
 ```
+
+---
+<a id="dousa"></a>
+## 🌐 動作確認（デモ環境）
+AWS上にデプロイしており、実際に動作をご確認いただけます。
+
+👉 「やくそくん」デモサイトはこちら
+(※別タブで開く場合は Ctrl + クリック / Cmd + クリック 推奨)
+
+テスト用ログイン情報
+
+ID: guest_user@example.com
+パスワード: password123
+
+---
+
+<a id="yoken"></a>
+## 📖 要件定義書・画面設計書
+👉 Web版 要件定義書・画面設計書はこちら（GitHub Pages）
+(※リンクを別タブで開く場合は Ctrl + クリック（Macは Cmd + クリック）してください)
+(※システム仕様・各画面イメージ・業務フローの詳細をWebページ形式でご覧いただけます)
 
 ---
 
